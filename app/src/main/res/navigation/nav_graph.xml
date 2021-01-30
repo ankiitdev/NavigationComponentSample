@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ankiitshrma.navigationcomponentsample.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_midFragment"
+            app:destination="@id/midFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_langFragment"
+            app:destination="@id/langFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/midFragment"
+        android:name="com.ankiitshrma.navigationcomponentsample.fragments.MidFragment"
+        android:label="fragment_mid"
+        tools:layout="@layout/fragment_mid" >
+        <action
+            android:id="@+id/action_midFragment_to_finalFragment"
+            app:destination="@id/finalFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.ankiitshrma.navigationcomponentsample.fragments.FinalFragment"
+        android:label="fragment_final"
+        tools:layout="@layout/fragment_final" >
+        <action
+            android:id="@+id/action_finalFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/langFragment"
+        android:name="com.ankiitshrma.navigationcomponentsample.fragments.LangFragment"
+        android:label="fragment_lang"
+        tools:layout="@layout/fragment_lang" >
+        <action
+            android:id="@+id/action_langFragment_to_libraryFragment2"
+            app:destination="@id/libraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.ankiitshrma.navigationcomponentsample.fragments.LibraryFragment"
+        android:label="fragment_library"
+        tools:layout="@layout/fragment_library" >
+        <action
+            android:id="@+id/action_libraryFragment_to_mainFragment2"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/langFragment" />
+    </fragment>
+</navigation>
